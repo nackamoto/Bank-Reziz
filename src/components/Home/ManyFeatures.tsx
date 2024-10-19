@@ -23,7 +23,7 @@ const ManyFeatures = () => {
             {" "}
             Everything you get with <br />
             <span className="text-span-2">
-              Bankr's foreign bank accounts
+              Bankr&#39;s foreign bank accounts
             </span>
           </h2>
         </div>
@@ -62,7 +62,7 @@ const ManyFeatures = () => {
           </h2>
 
           <button className=" bg-blue-600 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-blue-700">
-            Get started - it's free
+            Get started - it&#39;s free
           </button>
         </div>
       </div>

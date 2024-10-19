@@ -55,7 +55,7 @@ const Header = () => {
             </a>
 
             <button className=" bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
-              Get started - it's free
+              Get started - it&#39;s free
             </button>
           </div>
         </nav>
@@ -101,7 +101,7 @@ const Header = () => {
                   </a>
 
                   <button className=" bg-blue-600 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-blue-700">
-                    Get started - it's free
+                    Get started - it&#39;s free
                   </button>
                 </div>
               </div>
