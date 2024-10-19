@@ -119,9 +119,7 @@ const Footer = () => {
       <h2 className="text-3xl font-bold md:mr-32  mb-8 flex items-center"> <Image src={"/logo.png"} width={40} height={30} className='mr-2' alt="logo"/> Bankr</h2>
       <p>
       Bankr is a financial technology company, not a bank. Banking services
-        are provided by licensed banking partners. Canadian services are
-        offered by Aboki Finance Inc with registered address at 1285 West
-        Broadway Suite 600 Vancouver BC V6H 3X8. Canada.{" "}
+        are provided by licensed banking partners. We are providing fintech app services to our users.
       </p>
     </div>
   </footer>
