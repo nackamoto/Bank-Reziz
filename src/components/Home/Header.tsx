@@ -11,7 +11,7 @@ const navigation = [
   ];
 
 const Header = () => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="fixed left-0 inset-x-0 top-0 z-50 bg-white lg:px-14">

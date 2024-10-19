@@ -116,7 +116,7 @@ const Footer = () => {
     </div>
 
     <div className="border-t border-gray-700 bg-[#0c1015] p-8 md:p-16 md:flex justify-between">
-      <h2 className="text-3xl font-bold mr-20 mb-8">Bankr</h2>
+      <h2 className="text-3xl font-bold md:mr-32  mb-8 flex items-center"> <Image src={"/logo.png"} width={40} height={30} className='mr-2' alt="logo"/> Bankr</h2>
       <p>
       Bankr is a financial technology company, not a bank. Banking services
         are provided by licensed banking partners. Canadian services are

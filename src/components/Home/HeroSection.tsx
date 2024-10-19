@@ -2,9 +2,9 @@ import React from 'react'
 
 const HeroSection = () => {
   return (
-    <section className="bg-gray-100 py-16 mt-10">
-    <div className="container mx-auto flex flex-col lg:flex-row items-center h-auto md:h-[100vh] px-10 lg:px-[4%]">
-      <div className="lg:w-2/3 lg:pr-8 text-center lg:text-left px-10 mt-10 lg:mt-0 mb-8">
+    <section className="bg-gray-100 pt-16 mt-10">
+    <div className="container mx-auto flex flex-col lg:flex-row items-center h-auto md:h-[90vh] px-10 lg:px-[4%]">
+      <div className="lg:w-2/3 lg:pr-8 text-center lg:text-left px-10 mt-10 lg:mt-0 mb-8 md:mb-0">
         <h1 className="text-5xl lg:text-6xl font-extrabold text-gray-800 mb-10 max-w-[600px]">
           The bank account for modern professionals
         </h1>
@@ -23,7 +23,7 @@ const HeroSection = () => {
       <div className="lg:w-1/3 mt-8 lg:mt-0">
         <center>
           {" "}
-          <img src="/hand1.png" alt="Hero Image" className="h-500" />
+          <img src="/hand1.png" alt="Hero Image" className="h-500 max-w-[320px]" />
         </center>
       </div>
     </div>

@@ -56,7 +56,7 @@ const ManyFeatures = () => {
           </div>
         </center>
 
-        <div className="max-w-md mx-auto text-center">
+        <div className="max-w-md mx-auto text-center mb-20">
           <h2 className="font-bold text-2xl md:text-4xl text-white text-center mb-8 p-4 md:p-0">
             Ready to experience borderless banking with Bankr?
           </h2>
