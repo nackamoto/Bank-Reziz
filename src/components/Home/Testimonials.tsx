@@ -15,8 +15,8 @@ const Testimonials = () => {
   ]
 
   return (
-    <section className='py-20'>
-    <h1 className="text-3xl md:text-5xl font-bold text-center md:max-w-[70%] mx-auto mb-14">
+    <section className='py-28'>
+    <h1 className="text-3xl md:text-5xl font-bold text-center md:max-w-[70%] mx-auto mb-20">
       Join the professionals who trust Bankr with their banking needs
     </h1>
 

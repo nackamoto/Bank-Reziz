@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
+import Link from "next/link";
 
 const navigation = [
     { name: "Home", href: "#" },
@@ -18,9 +20,10 @@ const Header = () => {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="text-black text-4xl font-bold">Bankr</span>
-            </a>
+            <Link href="#" className="-m-1.5 p-1.5 flex items-center">
+              <Image src={"/logo.png"} width={30} height={30} alt="logo"/>
+              <span className="text-black text-4xl font-bold ml-2">Bankr</span>
+            </Link>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -92,12 +95,12 @@ const Header = () => {
                 <div className="py-6">
                   <a
                     href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 mr-6"
                   >
                     Log in
                   </a>
 
-                  <button className=" bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700">
+                  <button className=" bg-blue-600 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-blue-700">
                     Get started - it's free
                   </button>
                 </div>

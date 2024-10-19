@@ -78,3 +78,11 @@
   --admonition-warning-rgb-value: 253, 186, 116;
   --admonition-danger-rgb-value: 220, 38, 38;
 }
+
+
+.text-span-2 {
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(114deg, #aab6cf 29%, #8592ad47);
+  -webkit-background-clip: text;
+  background-clip: text;
+}

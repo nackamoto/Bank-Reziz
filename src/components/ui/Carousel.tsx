@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import AutoScroll from "embla-carousel-auto-scroll";
+import AutoScroll, { AutoScrollType } from "embla-carousel-auto-scroll";
 
 interface Slide {
   content: string;
@@ -21,19 +21,59 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   ]);
   const [isPlaying, setIsPlaying] = useState(true);
 
+  // useEffect(() => {
+  //   const autoScroll = emblaApi?.plugins()?.autoScroll;
+  //   if (!autoScroll) return;
+
+  //   setIsPlaying(autoScroll.isPlaying());
+  //   emblaApi
+  //     .on("autoScroll:play", () => setIsPlaying(true))
+  //     .on("autoScroll:stop", () => setIsPlaying(false))
+  //     .on("reInit", () => setIsPlaying(autoScroll.isPlaying()));
+  // }, [emblaApi]);
+
   useEffect(() => {
-    const autoScroll = emblaApi?.plugins()?.autoScroll;
+    const autoScroll = emblaApi?.plugins()?.autoScroll as AutoScrollType;
     if (!autoScroll) return;
 
-    setIsPlaying(autoScroll.isPlaying());
-    emblaApi
-      .on("autoScroll:play", () => setIsPlaying(true))
-      .on("autoScroll:stop", () => setIsPlaying(false))
-      .on("reInit", () => setIsPlaying(autoScroll.isPlaying()));
+    const handlePlay = () => setIsPlaying(true);
+    const handleStop = () => setIsPlaying(false);
+
+    // Ensure emblaApi is defined before attaching event listeners
+    if (emblaApi) {
+      emblaApi
+        .on("autoScroll:play", handlePlay)
+        .on("autoScroll:stop", handleStop)
+        .on("reInit", () => setIsPlaying(autoScroll.isPlaying()));
+    }
+
+    return () => {
+      if (emblaApi) {
+        emblaApi.off("autoScroll:play", handlePlay);
+        emblaApi.off("autoScroll:stop", handleStop);
+      }
+    };
+  }, [emblaApi]);
+
+  const handleMouseEnter = useCallback(() => {
+    const autoScroll = emblaApi?.plugins()?.autoScroll as AutoScrollType;
+    if (autoScroll) {
+      autoScroll.stop(); // Stop auto-scroll on hover
+    }
+  }, [emblaApi]);
+
+  const handleMouseLeave = useCallback(() => {
+    const autoScroll = emblaApi?.plugins()?.autoScroll as AutoScrollType;
+    if (autoScroll) {
+      autoScroll.play(); // Using `any` for temporary bypass
+    }
   }, [emblaApi]);
 
   return (
-    <div className="embla">
+    <div className="embla"
+    onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseLeave}
+    >
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((slide, index) => {
