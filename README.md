@@ -2,7 +2,9 @@
 
 Welcome to Bankr App 
 
-This project is a clome of grey (https://grey.co/foreign-accounts)
+Your best banking platform
+
+This project is a clone of grey (https://grey.co/foreign-accounts)
 
 
 ## Features

@@ -1,48 +1,76 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { EmblaOptionsType } from 'embla-carousel'
-import useEmblaCarousel from 'embla-carousel-react'
-import AutoScroll from 'embla-carousel-auto-scroll'
+import React, { useCallback, useEffect, useState } from "react";
+import { EmblaOptionsType } from "embla-carousel";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 
-type PropType = {
-  slides: number[]
-  options?: EmblaOptionsType
+interface Slide {
+  content: string;
+  person: string;
+  position: string;
 }
 
+type PropType = {
+  slides: Slide[];
+  options?: EmblaOptionsType;
+};
+
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props
+  const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    AutoScroll({ playOnInit: true })
-  ])
-  const [isPlaying, setIsPlaying] = useState(true)
+    AutoScroll({ playOnInit: true }),
+  ]);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
-    const autoScroll = emblaApi?.plugins()?.autoScroll
-    if (!autoScroll) return
+    const autoScroll = emblaApi?.plugins()?.autoScroll;
+    if (!autoScroll) return;
 
-    setIsPlaying(autoScroll.isPlaying())
+    setIsPlaying(autoScroll.isPlaying());
     emblaApi
-      .on('autoScroll:play', () => setIsPlaying(true))
-      .on('autoScroll:stop', () => setIsPlaying(false))
-      .on('reInit', () => setIsPlaying(autoScroll.isPlaying()))
-  }, [emblaApi])
+      .on("autoScroll:play", () => setIsPlaying(true))
+      .on("autoScroll:stop", () => setIsPlaying(false))
+      .on("reInit", () => setIsPlaying(autoScroll.isPlaying()));
+  }, [emblaApi]);
 
   return (
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              <div className="embla__slide__number">
-                <span>{index + 1}</span>
+          {slides.map((slide, index) => {
+            // Determine the background color based on the index
+            const backgroundColors = [
+              "#f0f2f5",
+              "#2467e3",
+              "#f0f2f5",
+              "#5e19b3",
+            ];
+            const backgroundColor =
+              backgroundColors[index % backgroundColors.length]; // Cycle through colors
+
+            const colors = ["black", "white", "black", "white"];
+            const color = colors[index % colors.length]; // Cycle through colors
+
+            color;
+
+            return (
+              <div
+                className="embla__slide"
+                key={index}
+                style={{ backgroundColor, color }} // Set the background color dynamically
+              >
+                <span>{slide.content}</span>
+
+                <div className="absolute bottom-4">
+                  <p className="font-bold">{slide.person}</p>
+                  <span>{slide.position}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
-
-     
     </div>
-  )
-}
+  );
+};
 
-export default EmblaCarousel
+export default EmblaCarousel;
