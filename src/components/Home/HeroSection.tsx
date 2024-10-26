@@ -23,7 +23,7 @@ const HeroSection = () => {
       <div className="lg:w-1/3 mt-8 lg:mt-0">
         <center>
           {" "}
-          <img src="/hand1.png" alt="Hero Image" className="h-500 max-w-[320px]" />
+          <img src="/hand1.png" alt="Hero Image" className="h-500 max-w-[320px]"   data-aos="slide-up" />
         </center>
       </div>
     </div>

@@ -6,11 +6,12 @@ import { PiStarFourFill } from "react-icons/pi";
 const features = ['100% digital signup', 'No account opening fees', 'Zero maintenance charges', 'An IBAN for business payments', 'Withdrawals to your local account', 'Account statements & proof of account', 'Generate payment invoices', 'Instant transaction notifications', 'Anti-fraud protection', 'Low transaction fees' ]
 
 const ManyFeatures = () => {
+
   return (
     <div className="bg-[#14181f] py-20">
       <div>
         <div className="text-center my-10">
-          <center>
+          <center data-aos="slide-up">
             <Image
               src={"/logo.png"}
               width={50}
@@ -45,15 +46,16 @@ const ManyFeatures = () => {
 
         <center>
           {" "}
-          <div className="md:w-[50%]">
-            <Image
-              src={"/hand2.webp"}
-              width={300}
-              height={500}
-              layout="responsive"
-              alt="card"
-            />
-          </div>
+          <div className="md:w-[50%] hover:scale-105 transition-transform duration-5000 ease-in-out">
+  <Image
+    src={"/hand2.webp"}
+    width={300}
+    height={500}
+    layout="responsive"
+    alt="card"
+  />
+</div>
+
         </center>
 
         <div className="max-w-md mx-auto text-center mb-20">

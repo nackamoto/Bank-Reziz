@@ -8,7 +8,7 @@ const Features = () => {
         Amazing Features
       </h1>
       <div className="grid md:grid-cols-3 gap-4">
-        <div className="bg-[#2f0d59] rounded-2xl transition hover:cursor-pointer hover:shadow-xl p-4">
+        <div className="bg-[#2f0d59] rounded-2xl transition hover:cursor-pointer hover:shadow-xl p-4"  data-aos="slide-right">
           <div className="p-6 pt-10">
             <h2 className="font-bold text-white text-2xl mb-2">
               Faster <br />
@@ -32,7 +32,7 @@ const Features = () => {
           </div>
         </div>
 
-        <div className="bg-[#f0f2f5] rounded-2xl transition hover:cursor-pointer hover:shadow-xl p-4">
+        <div className="bg-[#f0f2f5] rounded-2xl transition hover:cursor-pointer hover:shadow-xl p-4"  data-aos="slide-right">
           <div className="p-6 pt-10">
             <h2 className="font-bold text-2xl mb-2">
               No unnecessary
@@ -57,7 +57,7 @@ const Features = () => {
           </div>
         </div>
 
-        <div className="bg-[#1b1f28] rounded-2xl transition hover:cursor-pointer hover:shadow-2xl p-4">
+        <div className="bg-[#1b1f28] rounded-2xl transition hover:cursor-pointer hover:shadow-2xl p-4"  data-aos="slide-right">
           <div className="p-6 pt-10">
             <h2 className="font-bold text-white text-2xl mb-2">
             Credit from
